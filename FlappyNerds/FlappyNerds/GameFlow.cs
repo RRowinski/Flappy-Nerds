@@ -151,21 +151,24 @@ namespace FlappyNerds
                 Console.WriteLine("COLLISION!!");
             }
 
-            if (((int)gameTime.TotalGameTime.TotalSeconds % 5 == 4) && (released == false))
+            if (player.IsPlayerFound())
             {
-                GamePillar newGP = new GamePillar(this);
-                Components.Add(newGP);
-                
-                pillarX[0] = pillarX[1]; pillarX[1] = pillarX[2]; pillarX[2] = newGP.getX();
-                pillarY[0] = pillarY[1]; pillarY[1] = pillarY[2]; pillarY[2] = newGP.getY();
-                
+                if (((int)gameTime.TotalGameTime.TotalSeconds % 5 == 4) && (released == false))
+                {
+                    GamePillar newGP = new GamePillar(this);
+                    Components.Add(newGP);
 
-                released = true;
-            }
-            if ((int)gameTime.TotalGameTime.TotalSeconds % 5 == 0)
-            {
-                //Components.Add(new GamePillar(this));
-                released = false;
+                    pillarX[0] = pillarX[1]; pillarX[1] = pillarX[2]; pillarX[2] = newGP.getX();
+                    pillarY[0] = pillarY[1]; pillarY[1] = pillarY[2]; pillarY[2] = newGP.getY();
+
+
+                    released = true;
+                }
+                if ((int)gameTime.TotalGameTime.TotalSeconds % 5 == 0)
+                {
+                    //Components.Add(new GamePillar(this));
+                    released = false;
+                }
             }
 
             base.Update(gameTime);
