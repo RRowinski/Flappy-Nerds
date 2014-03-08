@@ -39,7 +39,12 @@ public class KinectData
         {
             if (skeletonFrame != null && this.skeletonData != null) // check that a frame is available
             {
-              skeletonFrame.CopySkeletonDataTo(this.skeletonData); // get the skeletal information in this frame
+                skeletonFrame.CopySkeletonDataTo(this.skeletonData); // get the skeletal information in this frame
+            
+                leftHandY = skeletonData.Joints[JointType.HandLeft].Position.Y;
+                rightHandY = skeletonData.Joints[JointType.HandRight].Position.Y;
+                headY = skeletonData.Joints[JointType.Head].Position.Y;
+                hipCentreY = skeletonData.Joints[JointType.HipCenter].Position.Y;
             }
         }
     }
