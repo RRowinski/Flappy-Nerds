@@ -12,7 +12,7 @@ public class KinectData
     private int headY;
     private int hipCentreY;
 
-    KinectData()
+    public KinectData()
     {
         skeletonData = new Skeleton[];
         kinect = null;
