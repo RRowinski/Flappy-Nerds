@@ -24,6 +24,14 @@ namespace FlappyNerds
         const float birdX = 30;
         float birdY;
 
+        //the background texture
+        Texture2D background;
+
+        //the pillar X
+        int[] pillar1 = new int[3];
+
+        bool released;
+
         public GameFlow()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -43,6 +51,7 @@ namespace FlappyNerds
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            Components.Add(new GamePillar(this));
 
             base.Initialize();
         }
@@ -57,7 +66,11 @@ namespace FlappyNerds
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             bird = Content.Load<Texture2D>("initial-sprite");
-            // TODO: use this.Content to load your game content here
+            background = Content.Load<Texture2D>("background2");
+            released = false;
+
+            Services.AddService(typeof(SpriteBatch), spriteBatch);
+
         }
 
         /// <summary>
@@ -84,6 +97,19 @@ namespace FlappyNerds
             birdY += player.GetLeftHandY() * 10;
             Console.WriteLine("Game flow: " + birdY);
 
+            if (((int)gameTime.TotalGameTime.TotalSeconds % 10 == 8) && (released == false))
+            {
+                GamePillar newGP = new GamePillar(this);
+                Components.Add(newGP);
+
+                released = true;
+            }
+            if ((int)gameTime.TotalGameTime.TotalSeconds % 10 == 0)
+            {
+                //Components.Add(new GamePillar(this));
+                released = false;
+            }
+
             base.Update(gameTime);
         }
 
@@ -100,6 +126,11 @@ namespace FlappyNerds
                             new Vector2(bird.Width/2,bird.Height/2), 
                             0.1f,SpriteEffects.None,1.0f);
             spriteBatch.End();
+            
+            spriteBatch.Begin();
+            spriteBatch.Draw(background, GraphicsDevice.Viewport.Bounds, Color.White);
+            spriteBatch.End();
+
             base.Draw(gameTime);
         }
         /*
