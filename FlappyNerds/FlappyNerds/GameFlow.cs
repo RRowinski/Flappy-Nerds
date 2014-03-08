@@ -26,8 +26,8 @@ namespace FlappyNerds
         float birdY;
         float birdYVol;
         const float birdX = 30;
-        const float flapVol = 10;
-        const float gravity = -5;
+        const float flapVol = -10;
+        const float gravity = 5;
 
         //the background texture
         Texture2D background;
