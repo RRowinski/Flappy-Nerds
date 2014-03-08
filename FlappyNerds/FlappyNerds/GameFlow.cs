@@ -15,13 +15,13 @@ namespace FlappyNerds
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public class GameFlow : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D bird;
 
-        public Game1()
+        public GameFlow()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
