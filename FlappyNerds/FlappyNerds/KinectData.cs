@@ -21,6 +21,7 @@ public class KinectData
     private static float rightHandY;
     private static float headY;
     private static float hipCentreY;
+    private static bool playerFound;
 
     public KinectData()
     {

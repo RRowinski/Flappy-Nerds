@@ -76,7 +76,7 @@ namespace FlappyNerds
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             bird = Content.Load<Texture2D>("initial-sprite");
-            background = Content.Load<Texture2D>("background2");
+            background = Content.Load<Texture2D>("background");
             released = false;
 
             Services.AddService(typeof(SpriteBatch), spriteBatch);
