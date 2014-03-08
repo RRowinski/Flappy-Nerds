@@ -22,6 +22,8 @@ namespace FlappyNerds
         Texture2D bird;
         KinectData player;
         const float birdX = 30;
+        const float flapVol = 10;
+        const float gravity = 5;
         float birdY;
 
         //the background texture
@@ -126,12 +128,17 @@ namespace FlappyNerds
                             new Vector2(bird.Width/2,bird.Height/2), 
                             0.1f,SpriteEffects.None,1.0f);
             spriteBatch.End();
-            
+
             spriteBatch.Begin();
             spriteBatch.Draw(background, GraphicsDevice.Viewport.Bounds, Color.White);
             spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        private bool Flap()
+        {
+
         }
         /*
         protected void Exit()
