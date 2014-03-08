@@ -30,7 +30,14 @@ namespace FlappyNerds
         Texture2D background;
 
         //the pillar X
-        int[] pillar1 = new int[3];
+        int[] pillarX = new int[3];
+        
+        //stuff
+        int gap = 150;
+        int score;
+
+        //the pillar Y
+        int[] pillarY = new int[3];
 
         bool released;
 
@@ -109,11 +116,23 @@ namespace FlappyNerds
             }
 
             Console.WriteLine("Game flow: " + birdY);
+            
+            if ((birdX > pillarX[0]))
+                score++;
+
+            if ((birdX > pillarX[0]) && (birdX < pillarX[0] + 35) && ((birdY > pillarY[0]) || (birdY < pillarY[0] - gap)))
+            {
+                //collision
+                Console.WriteLine("COLLISION!!");
+            }
 
             if (((int)gameTime.TotalGameTime.TotalSeconds % 5 == 4) && (released == false))
             {
                 GamePillar newGP = new GamePillar(this);
                 Components.Add(newGP);
+                
+                pillarX[0] = pillarX[1]; pillarX[1] = pillarX[2]; pillarX[2] = newGP.getX();
+                pillarY[0] = pillarY[1]; pillarY[1] = pillarY[2]; pillarY[2] = newGP.getY();
 
                 released = true;
             }
