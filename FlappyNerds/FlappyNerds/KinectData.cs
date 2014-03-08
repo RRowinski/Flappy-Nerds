@@ -1,3 +1,13 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using Microsoft.Kinect;
 
 public class KinectData
@@ -5,7 +15,7 @@ public class KinectData
     // Make a global variable for the kinect sensor so that all parts of the program can use it
     public static KinectSensor kinect = null;
 
-    public static Skeleton skeletonData;
+    public static Skeleton skeletonData[];
 
     private float leftHandY;
     private float rightHandY;
