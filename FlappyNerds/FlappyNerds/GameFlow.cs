@@ -21,8 +21,8 @@ namespace FlappyNerds
         SpriteBatch spriteBatch;
         Texture2D bird;
         KinectData player;
-        const int birdX = 30;
-        int birdY;
+        const float birdX = 30;
+        float birdY;
 
         public GameFlow()
         {
@@ -81,7 +81,8 @@ namespace FlappyNerds
                 this.Exit();
 
             // TODO: Add your update logic here
-            birdY = player.getLeftHandY();
+            birdY = player.GetLeftHandY();
+            Console.WriteLine(birdY);
 
             base.Update(gameTime);
         }
