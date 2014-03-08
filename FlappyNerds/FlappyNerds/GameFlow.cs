@@ -29,7 +29,7 @@ namespace FlappyNerds
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             player = new KinectData();
-            int birdY = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2;
+            int birdY = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2;
 
             player.StartKinect();
         }
@@ -81,7 +81,7 @@ namespace FlappyNerds
                 this.Exit();
 
             // TODO: Add your update logic here
-            birdY = player.GetLeftHandY();
+            birdY += player.GetLeftHandY() * 10;
             Console.WriteLine("Game flow: " + birdY);
 
             base.Update(gameTime);
@@ -95,7 +95,7 @@ namespace FlappyNerds
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
-            spriteBatch.Draw(bird, new Vector2(birdX,birdY * -150),
+            spriteBatch.Draw(bird, new Vector2(birdX,birdY),
                             null, Color.White,0.3f,
                             new Vector2(bird.Width/2,bird.Height/2), 
                             0.1f,SpriteEffects.None,1.0f);
