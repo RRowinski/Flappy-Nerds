@@ -19,6 +19,7 @@ namespace FlappyNerds
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Texture2D bird;
 
         public Game1()
         {
@@ -48,6 +49,7 @@ namespace FlappyNerds
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            bird = Content.Load<Texture2D("initial-sprite");
             // TODO: use this.Content to load your game content here
         }
 
@@ -83,9 +85,12 @@ namespace FlappyNerds
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
+            spriteBatch.Begin();
+            spriteBatch.Draw(bird, new Vector2 (100,100),
+                            null, Color.White,0.3f,
+                            new Vector2(bird.Width/2,bird.Height/2), 
+                            1.0f,SpriteEffects.None,1.0f);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
