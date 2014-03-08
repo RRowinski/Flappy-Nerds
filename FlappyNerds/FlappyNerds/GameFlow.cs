@@ -21,11 +21,13 @@ namespace FlappyNerds
         SpriteBatch spriteBatch;
         Texture2D bird;
         KinectData player;
-        bool running;
+        bool running = false;
+        bool canFlap = false;
         float birdY;
+        float birdYVol;
         const float birdX = 30;
         const float flapVol = 10;
-        const float gravity = 5;
+        const float gravity = -5;
 
         //the background texture
         Texture2D background;
@@ -64,6 +66,7 @@ namespace FlappyNerds
             // TODO: Add your initialization logic here
             GamePillar newGP = new GamePillar(this);
             Components.Add(newGP);
+            birdYVol = 0;
             
             pillarX[0] = newGP.getX();
             pillarX[1] = GraphicsDevice.Viewport.Width;
@@ -114,7 +117,19 @@ namespace FlappyNerds
                 this.Exit();
 
             // TODO: Add your update logic here
-            birdY += player.GetLeftHandY() * 10;
+            if (!canFlap && player.GetLeftHandY > player.GetHeadY && player.GetRightHandY > player.GetHeadY)
+            {
+                canFlap = true;
+            }
+
+            if (canFlap && player.GetLeftHandY < player.GetHipY && player.GetRightHandY > player.GetHeadY)
+            {
+                birdYVol = flapVol;
+                canFlap = false;
+            }
+
+            birdY += birdYVol;
+            birdYVol += gravity;
 
             if (birdY < 0)
             {
