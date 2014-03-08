@@ -39,9 +39,7 @@ namespace FlappyNerds
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             player = new KinectData();
-            int birdY = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height / 2;
 
-            player.StartKinect();
         }
 
         /// <summary>
@@ -52,6 +50,9 @@ namespace FlappyNerds
         /// </summary>
         protected override void Initialize()
         {
+            int birdY = GraphicsDevice.Viewport.Height / 2;
+
+            player.StartKinect();
             // TODO: Add your initialization logic here
             Components.Add(new GamePillar(this));
 
@@ -96,14 +97,15 @@ namespace FlappyNerds
                 this.Exit();
 
             // TODO: Add your update logic here
-            
-            if(birdY < 0)
+            birdY += player.GetLeftHandY() * 10;
+
+            if (birdY < 0)
             {
                 birdY = 0;
             }
-            else if(birdY > GraphicDevice.PreferredBackBufferHeight)
+            else if (birdY > GraphicsDevice.Viewport.Height)
             {
-                birdY = GraphicDevice.PreferredBackBufferHeight;
+                birdY = GraphicsDevice.Viewport.Height;
             }
 
             Console.WriteLine("Game flow: " + birdY);
@@ -135,12 +137,12 @@ namespace FlappyNerds
             spriteBatch.Begin();
             spriteBatch.Draw(background, GraphicsDevice.Viewport.Bounds, Color.White);
             spriteBatch.End();
-            
+
             spriteBatch.Begin();
-            spriteBatch.Draw(bird, new Vector2(birdX,birdY),
-                            null, Color.White,0.3f,
-                            new Vector2(bird.Width/2,bird.Height/2), 
-                            0.1f,SpriteEffects.None,1.0f);
+            spriteBatch.Draw(bird, new Vector2(birdX, birdY),
+                            null, Color.White, 0.3f,
+                            new Vector2(bird.Width / 2, bird.Height / 2),
+                            0.1f, SpriteEffects.None, 1.0f);
             spriteBatch.End();
 
             base.Draw(gameTime);
@@ -148,7 +150,7 @@ namespace FlappyNerds
 
         private bool Flap()
         {
-
+            return true;
         }
         /*
         protected void Exit()

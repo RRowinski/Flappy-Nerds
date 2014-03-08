@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\initial-sprite.xnb</Output>
-      <Time>2014-03-08T12:46:03.3411701+00:00</Time>
+      <Time>2014-03-08T16:07:12.1177632+00:00</Time>
     </Item>
     <Item>
       <Source>background2.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\background2.xnb</Output>
-      <Time>2014-03-08T15:23:38.4622706+00:00</Time>
+      <Time>2014-03-08T16:07:12.1167631+00:00</Time>
     </Item>
     <Item>
       <Source>PipeDown.jpg</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\PipeDown.xnb</Output>
-      <Time>2014-03-08T15:23:38.4422695+00:00</Time>
+      <Time>2014-03-08T16:07:12.1087627+00:00</Time>
     </Item>
     <Item>
       <Source>PipeUp.jpg</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\PipeUp.xnb</Output>
-      <Time>2014-03-08T15:23:38.4542702+00:00</Time>
+      <Time>2014-03-08T16:07:12.1097627+00:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
