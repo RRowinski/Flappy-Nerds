@@ -94,17 +94,21 @@ namespace FlappyNerds
                 this.Exit();
 
             // TODO: Add your update logic here
-            birdY += player.GetLeftHandY() * 10;
+            if (birdY + player.GetLeftHandY() * 10 < GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height && birdY + player.GetLeftHandY() * 10 >= 0)
+            {
+                birdY += player.GetLeftHandY() * 10;
+            }
+
             Console.WriteLine("Game flow: " + birdY);
 
-            if (((int)gameTime.TotalGameTime.TotalSeconds % 10 == 8) && (released == false))
+            if (((int)gameTime.TotalGameTime.TotalSeconds % 5 == 4) && (released == false))
             {
                 GamePillar newGP = new GamePillar(this);
                 Components.Add(newGP);
 
                 released = true;
             }
-            if ((int)gameTime.TotalGameTime.TotalSeconds % 10 == 0)
+            if ((int)gameTime.TotalGameTime.TotalSeconds % 5 == 0)
             {
                 //Components.Add(new GamePillar(this));
                 released = false;
@@ -120,6 +124,12 @@ namespace FlappyNerds
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+
+
+            spriteBatch.Begin();
+            spriteBatch.Draw(background, GraphicsDevice.Viewport.Bounds, Color.White);
+            spriteBatch.End();
+            
             spriteBatch.Begin();
             spriteBatch.Draw(bird, new Vector2(birdX,birdY),
                             null, Color.White,0.3f,
@@ -127,9 +137,6 @@ namespace FlappyNerds
                             0.1f,SpriteEffects.None,1.0f);
             spriteBatch.End();
             
-            spriteBatch.Begin();
-            spriteBatch.Draw(background, GraphicsDevice.Viewport.Bounds, Color.White);
-            spriteBatch.End();
 
             base.Draw(gameTime);
         }
