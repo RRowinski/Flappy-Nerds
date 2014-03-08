@@ -1,0 +1,1 @@
+C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerdsContent\obj\x86\Debug\FlappyNerdsContent.contentprojResolveAssemblyReference.cache
