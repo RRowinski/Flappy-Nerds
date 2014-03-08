@@ -14,7 +14,7 @@ public class KinectData
 
     KinectData()
     {
-        skeletonData = new Skeleton;
+        skeletonData = new Skeleton[];
         kinect = null;
         leftHandY = 0;
         rightHandY = 0;
