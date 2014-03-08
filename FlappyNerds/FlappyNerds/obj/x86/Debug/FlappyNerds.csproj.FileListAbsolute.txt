@@ -9,3 +9,4 @@ C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\D
 C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\PipeDown.xnb
 C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\PipeUp.xnb
 C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\background.xnb
+C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\cuteBird.xnb

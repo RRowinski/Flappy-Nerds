@@ -21,7 +21,7 @@ namespace FlappyNerds
         SpriteBatch spriteBatch;
         Texture2D bird;
         KinectData player;
-        bool running = false;
+        bool running = true;
         bool canFlap = false;
         float birdY;
         float birdYVol;
@@ -116,7 +116,7 @@ namespace FlappyNerds
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (player.IsPlayerFound())
+            if (player.IsPlayerFound() && running)
             {
             pillarX[0] += (velocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
             pillarX[1] += (velocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
@@ -161,6 +161,7 @@ namespace FlappyNerds
             {
                 //collision
                 Console.WriteLine("COLLISION!!");
+                running = false;
             }
 
             

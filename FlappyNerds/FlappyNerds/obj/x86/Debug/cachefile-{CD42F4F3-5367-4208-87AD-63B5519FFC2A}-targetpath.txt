@@ -3,3 +3,4 @@ Content\background2.xnb
 Content\PipeDown.xnb
 Content\PipeUp.xnb
 Content\background.xnb
+Content\cuteBird.xnb

@@ -46,6 +46,15 @@
       <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\background.xnb</Output>
       <Time>2014-03-08T17:00:23.6403078+00:00</Time>
     </Item>
+    <Item>
+      <Source>cuteBird.png</Source>
+      <Name>cuteBird</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\cuteBird.xnb</Output>
+      <Time>2014-03-08T17:12:48.9019344+00:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
