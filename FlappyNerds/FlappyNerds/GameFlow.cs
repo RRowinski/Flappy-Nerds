@@ -62,14 +62,12 @@ namespace FlappyNerds
 
             player.StartKinect();
             // TODO: Add your initialization logic here
-            GamePillar newGP = new GamePillar(this);
-            Components.Add(newGP);
             
-            pillarX[0] = newGP.getX();
+            pillarX[0] = GraphicsDevice.Viewport.Width;
             pillarX[1] = GraphicsDevice.Viewport.Width;
             pillarX[2] = GraphicsDevice.Viewport.Width;
             
-            pillarY[0] = newGP.getY();
+            pillarY[0] = GraphicsDevice.Viewport.Height;
             pillarY[1] = GraphicsDevice.Viewport.Height;
             pillarY[2] = GraphicsDevice.Viewport.Height;
 
