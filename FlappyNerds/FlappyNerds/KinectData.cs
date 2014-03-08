@@ -70,22 +70,22 @@ public class KinectData
 
     public static int GetLeftHandY()
     {
-        return leftHandY;
+        return this.leftHandY;
     }
 
     public static int GetRightHandY()
     {
-        return rightHandY;
+        return this.rightHandY;
     }
 
     public static int GetHeadY()
     {
-        return headY;
+        return this.headY;
     }
 
     public static int GetHipY()
     {
-        return hipCentreY;
+        return this.hipCentreY;
     }
 
     
