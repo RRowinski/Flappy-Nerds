@@ -205,6 +205,10 @@ namespace FlappyNerds
                             0.1f, SpriteEffects.None, 1.0f);
             spriteBatch.End();
 
+            spriteBatch.Begin();
+            spriteBatch.DrawString(font, "Score: " + score, Vector2.zero, Color.White);
+            spriteBatch.End();
+
             base.Draw(gameTime);
         }
 
