@@ -30,6 +30,7 @@ public class KinectData
         rightHandY = 0;
         headY = 0;
         hipCentreY = 0;
+        playerFound = false;
     }
 
     public void StartKinect()
@@ -65,7 +66,12 @@ public class KinectData
             rightHandY = first.Joints[JointType.HandRight].Position.Y;
             headY = first.Joints[JointType.Head].Position.Y;
             hipCentreY = first.Joints[JointType.HipCenter].Position.Y;
+            playerFound = true;
             Console.WriteLine(leftHandY);
+        }
+        else
+        {
+            playerFound = false;
         }
         #endregion
     }
@@ -125,5 +131,8 @@ public class KinectData
         return hipCentreY;
     }
 
-    
+    public bool IsPlayerFound()
+    {
+        return playerFound;
+    }
 }
