@@ -1,2 +1,7 @@
 C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\obj\x86\Debug\FlappyNerds.csprojResolveAssemblyReference.cache
 C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\initial-sprite.xnb
+C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\FlappyNerds.exe
+C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\FlappyNerds.pdb
+C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\obj\x86\Debug\FlappyNerds.exe
+C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\obj\x86\Debug\FlappyNerds.pdb

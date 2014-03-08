@@ -36,7 +36,7 @@ public class KinectData
         kinect = KinectSensor.KinectSensors.FirstOrDefault(s => s.Status == KinectStatus.Connected); // Get first Kinect Sensor
         kinect.SkeletonStream.Enable(); // Enable skeletal tracking
 
-        skeletonData = new Skeleton[1]; // Allocate ST data
+        skeletonData = new Skeleton[6]; // Allocate ST data
 
         kinect.SkeletonFrameReady += new EventHandler<SkeletonFrameReadyEventArgs>(Kinect_SkeletonFrameReady); // Get Ready for Skeleton Ready Events
 
@@ -56,14 +56,14 @@ public class KinectData
     {
         using (SkeletonFrame skeletonFrame = e.OpenSkeletonFrame()) // Open the Skeleton frame
         {
-            if (skeletonFrame != null && this.skeletonData != null) // check that a frame is available
+            if (skeletonFrame != null && skeletonData != null) // check that a frame is available
             {
-                skeletonFrame.CopySkeletonDataTo(this.skeletonData); // get the skeletal information in this frame
+                skeletonFrame.CopySkeletonDataTo(skeletonData); // get the skeletal information in this frame
             
-                leftHandY = skeletonData.Joints[JointType.HandLeft].Position.Y;
-                rightHandY = skeletonData.Joints[JointType.HandRight].Position.Y;
-                headY = skeletonData.Joints[JointType.Head].Position.Y;
-                hipCentreY = skeletonData.Joints[JointType.HipCenter].Position.Y;
+                leftHandY = skeletonData[0].Joints[JointType.HandLeft].Position.Y;
+                rightHandY = skeletonData[0].Joints[JointType.HandRight].Position.Y;
+                headY = skeletonData[0].Joints[JointType.Head].Position.Y;
+                hipCentreY = skeletonData[0].Joints[JointType.HipCenter].Position.Y;
             }
         }
     }
