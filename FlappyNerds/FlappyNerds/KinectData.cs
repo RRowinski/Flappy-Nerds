@@ -29,7 +29,7 @@ public class KinectData
 
         skeletonData = new Skeleton[kinect.SkeletonStream.FrameSkeletonArrayLength]; // Allocate ST data
 
-        kinect.SkeletonFrameReady += new EventHandler<SkeletonFrameReadyEventArgs>(kinect_SkeletonFrameReady); // Get Ready for Skeleton Ready Events
+        kinect.SkeletonFrameReady += new EventHandler<SkeletonFrameReadyEventArgs>(Kinect_SkeletonFrameReady); // Get Ready for Skeleton Ready Events
 
         kinect.Start(); // Start Kinect sensor
     }
@@ -43,7 +43,7 @@ public class KinectData
         }
     }
 
-    public void UpdateSkeleton(object sender, SkeletonFrameReadyEventArgs e)
+    public void Kinect_SkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
     {
         using (SkeletonFrame skeletonFrame = e.OpenSkeletonFrame()) // Open the Skeleton frame
         {
