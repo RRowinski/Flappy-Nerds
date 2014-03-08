@@ -7,14 +7,14 @@ public class KinectData
 
     public static Skeleton skeletonData;
 
-    private int leftHandY;
-    private int rightHandY;
-    private int headY;
-    private int hipCentreY;
+    private float leftHandY;
+    private float rightHandY;
+    private float headY;
+    private float hipCentreY;
 
     public KinectData()
     {
-        skeletonData = new Skeleton[];
+        skeletonData = new Skeleton[1];
         kinect = null;
         leftHandY = 0;
         rightHandY = 0;
@@ -43,7 +43,7 @@ public class KinectData
         }
     }
 
-    private void UpdateSkeleton(object sender, SkeletonFrameReadyEventArgs e)
+    public void UpdateSkeleton(object sender, SkeletonFrameReadyEventArgs e)
     {
         using (SkeletonFrame skeletonFrame = e.OpenSkeletonFrame()) // Open the Skeleton frame
         {
