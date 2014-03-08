@@ -56,7 +56,7 @@ namespace FlappyNerds
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            bird = Content.Load<Texture2D("initial-sprite");
+            bird = Content.Load<Texture2D>("initial-sprite");
             // TODO: use this.Content to load your game content here
         }
 
@@ -80,7 +80,7 @@ namespace FlappyNerds
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            player.updateSkeleton();
+            player.UpdateSkeleton();
 
             // TODO: Add your update logic here
 

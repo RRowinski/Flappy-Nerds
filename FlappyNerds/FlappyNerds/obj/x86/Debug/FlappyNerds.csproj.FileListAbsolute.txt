@@ -1,0 +1,2 @@
+C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\obj\x86\Debug\FlappyNerds.csprojResolveAssemblyReference.cache
+C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
