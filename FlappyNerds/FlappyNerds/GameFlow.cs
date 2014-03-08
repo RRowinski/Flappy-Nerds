@@ -32,6 +32,8 @@ namespace FlappyNerds
         //the background texture
         Texture2D background;
 
+        SpriteFont font;
+
         //the pillar X
         double[] pillarX = new double[3];
         
@@ -95,6 +97,7 @@ namespace FlappyNerds
 
             Services.AddService(typeof(SpriteBatch), spriteBatch);
 
+            font = Content.Load<SpriteFont>("Game");
         }
 
         /// <summary>
