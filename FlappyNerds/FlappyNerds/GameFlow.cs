@@ -21,6 +21,7 @@ namespace FlappyNerds
         SpriteBatch spriteBatch;
         Texture2D bird;
         KinectData player;
+        bool running;
         float birdY;
         const float birdX = 30;
         const float flapVol = 10;
@@ -57,7 +58,7 @@ namespace FlappyNerds
         /// </summary>
         protected override void Initialize()
         {
-            int birdY = GraphicsDevice.Viewport.Height / 2;
+            birdY = GraphicsDevice.Viewport.Height / 2;
 
             player.StartKinect();
             // TODO: Add your initialization logic here
