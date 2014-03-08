@@ -20,11 +20,18 @@ namespace FlappyNerds
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D bird;
+        KinectData player;
+        const int birdX = 30;
+        int birdY;
 
         public GameFlow()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            player = new KinectData();
+            int birdY = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width / 2;
+
+            player.StartKinect();
         }
 
         /// <summary>
@@ -73,6 +80,8 @@ namespace FlappyNerds
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+            player.updateSkeleton();
+
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -86,7 +95,7 @@ namespace FlappyNerds
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
-            spriteBatch.Draw(bird, new Vector2 (100,100),
+            spriteBatch.Draw(bird, new Vector2(birdX,birdY),
                             null, Color.White,0.3f,
                             new Vector2(bird.Width/2,bird.Height/2), 
                             1.0f,SpriteEffects.None,1.0f);
