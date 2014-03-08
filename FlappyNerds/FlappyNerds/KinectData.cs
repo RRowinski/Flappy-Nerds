@@ -15,7 +15,7 @@ public class KinectData
     // Make a global variable for the kinect sensor so that all parts of the program can use it
     public static KinectSensor kinect = null;
 
-    public static Skeleton skeletonData[];
+    public static Skeleton skeletonData;
 
     private float leftHandY;
     private float rightHandY;
@@ -24,7 +24,7 @@ public class KinectData
 
     public KinectData()
     {
-        skeletonData = new Skeleton[1];
+        skeletonData = new Skeleton();
         kinect = null;
         leftHandY = 0;
         rightHandY = 0;
