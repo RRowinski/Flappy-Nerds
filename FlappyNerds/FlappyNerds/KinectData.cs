@@ -43,7 +43,7 @@ public class KinectData
         kinect.Start(); // Start Kinect sensor
     }
 
-    public static void StopKinect() // Stops the kinect sensor
+    public void StopKinect() // Stops the kinect sensor
     {
         if (kinect != null)
         {
