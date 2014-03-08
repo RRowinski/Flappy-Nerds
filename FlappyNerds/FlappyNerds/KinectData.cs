@@ -38,7 +38,7 @@ public class KinectData
 
         skeletonData = new Skeleton[6]; // Allocate ST data
 
-        kinect.SkeletonFrameReady += new EventHandler<SkeletonFrameReadyEventArgs>(Kinect_SkeletonFrameReady); // Get Ready for Skeleton Ready Events
+        kinect.AllFramesReady += new EventHandler<AllFramesReadyEventArgs>(Kinect_AllFramesReady); // Get Ready for Skeleton Ready Events
 
         kinect.Start(); // Start Kinect sensor
     }
@@ -52,21 +52,57 @@ public class KinectData
         }
     }
 
-    public void Kinect_SkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
+    public void Kinect_AllFramesReady(object sender, AllFramesReadyEventArgs e)
+    {
+        #region //Get a skeleton
+
+        Skeleton first = GetFirstSkeleton(e);
+
+        if (first != null)
+        {
+            leftHandY = first.Joints[JointType.HandLeft].Position.Y;
+            rightHandY = first.Joints[JointType.HandRight].Position.Y;
+            headY = first.Joints[JointType.Head].Position.Y;
+            hipCentreY = first.Joints[JointType.HipCenter].Position.Y;
+            Console.WriteLine(leftHandY);
+        }
+        #endregion
+    }
+
+    private Skeleton GetFirstSkeleton(AllFramesReadyEventArgs e)
+    {
+        using (SkeletonFrame skeletonFrameData = e.OpenSkeletonFrame())
+        {
+            if (skeletonFrameData == null)
+            {
+                return null;
+            }
+            skeletonFrameData.CopySkeletonDataTo(KinectData.skeletonData);
+
+            //get the first tracked skeleton
+            Skeleton first = (from s in KinectData.skeletonData
+                              where s.TrackingState == SkeletonTrackingState.Tracked
+                              select s).FirstOrDefault();
+            return first;
+        }
+    }
+
+    /*
+    public void Kinect_AllFramesReady(object sender, AllFramesReadyEventArgs e)
     {
         using (SkeletonFrame skeletonFrame = e.OpenSkeletonFrame()) // Open the Skeleton frame
         {
             if (skeletonFrame != null && skeletonData != null) // check that a frame is available
             {
                 skeletonFrame.CopySkeletonDataTo(skeletonData); // get the skeletal information in this frame
-            
+                Console.WriteLine("I get here!");
                 leftHandY = skeletonData[0].Joints[JointType.HandLeft].Position.Y;
                 rightHandY = skeletonData[0].Joints[JointType.HandRight].Position.Y;
                 headY = skeletonData[0].Joints[JointType.Head].Position.Y;
                 hipCentreY = skeletonData[0].Joints[JointType.HipCenter].Position.Y;
             }
         }
-    }
+    }*/
 
     public float GetLeftHandY()
     {
