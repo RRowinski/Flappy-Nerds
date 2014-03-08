@@ -81,6 +81,7 @@ namespace FlappyNerds
                 this.Exit();
 
             // TODO: Add your update logic here
+            birdY = player.getLeftHandY();
 
             base.Update(gameTime);
         }
