@@ -43,7 +43,7 @@ public class KinectData
         }
     }
 
-    private void UpdateSkeleton(object sender, SkeletonFrameReadyEventArgs e)
+    public void UpdateSkeleton(object sender, SkeletonFrameReadyEventArgs e)
     {
         using (SkeletonFrame skeletonFrame = e.OpenSkeletonFrame()) // Open the Skeleton frame
         {
