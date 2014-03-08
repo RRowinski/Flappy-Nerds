@@ -68,24 +68,24 @@ public class KinectData
         }
     }
 
-    public static int GetLeftHandY()
+    public static float GetLeftHandY()
     {
-        return this.leftHandY;
+        return leftHandY;
     }
 
-    public static int GetRightHandY()
+    public static float GetRightHandY()
     {
-        return this.rightHandY;
+        return rightHandY;
     }
 
-    public static int GetHeadY()
+    public static float GetHeadY()
     {
-        return this.headY;
+        return headY;
     }
 
-    public static int GetHipY()
+    public static float GetHipY()
     {
-        return this.hipCentreY;
+        return hipCentreY;
     }
 
     
