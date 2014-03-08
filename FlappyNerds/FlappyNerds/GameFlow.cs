@@ -122,8 +122,8 @@ namespace FlappyNerds
             {
                 birdY = GraphicsDevice.Viewport.Height;
             }
-
-            Console.WriteLine("Game flow: " + birdY);
+            Console.WriteLine(pillarX[0]);
+            //Console.WriteLine("Game flow: " + birdY);
             
             if ((birdX > pillarX[0]))
                 score++;
@@ -141,6 +141,7 @@ namespace FlappyNerds
                 
                 pillarX[0] = pillarX[1]; pillarX[1] = pillarX[2]; pillarX[2] = newGP.getX();
                 pillarY[0] = pillarY[1]; pillarY[1] = pillarY[2]; pillarY[2] = newGP.getY();
+                
 
                 released = true;
             }
