@@ -24,7 +24,6 @@ public class KinectData
 
     public KinectData()
     {
-        skeletonData = new Skeleton();
         kinect = null;
         leftHandY = 0;
         rightHandY = 0;
@@ -37,7 +36,7 @@ public class KinectData
         kinect = KinectSensor.KinectSensors.FirstOrDefault(s => s.Status == KinectStatus.Connected); // Get first Kinect Sensor
         kinect.SkeletonStream.Enable(); // Enable skeletal tracking
 
-        skeletonData = new Skeleton[kinect.SkeletonStream.FrameSkeletonArrayLength]; // Allocate ST data
+        skeletonData = new Skeleton(); // Allocate ST data
 
         kinect.SkeletonFrameReady += new EventHandler<SkeletonFrameReadyEventArgs>(Kinect_SkeletonFrameReady); // Get Ready for Skeleton Ready Events
 
