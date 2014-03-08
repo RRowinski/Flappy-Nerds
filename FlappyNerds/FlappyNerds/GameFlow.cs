@@ -26,8 +26,8 @@ namespace FlappyNerds
         float birdY;
         float birdYVol;
         const float birdX = 30;
-        const float flapVol = -10;
-        const float gravity = 5;
+        const float flapVol = -5;
+        const float gravity = 0.2F;
 
         //the background texture
         Texture2D background;
@@ -117,12 +117,12 @@ namespace FlappyNerds
                 this.Exit();
 
             // TODO: Add your update logic here
-            if (!canFlap && player.GetLeftHandY > player.GetHeadY && player.GetRightHandY > player.GetHeadY)
+            if (!canFlap && player.GetLeftHandY() > player.GetHeadY() && player.GetRightHandY() > player.GetHeadY())
             {
                 canFlap = true;
             }
 
-            if (canFlap && player.GetLeftHandY < player.GetHipY && player.GetRightHandY > player.GetHeadY)
+            if (canFlap && player.GetLeftHandY() < player.GetHipY() && player.GetRightHandY() < player.GetHipY())
             {
                 birdYVol = flapVol;
                 canFlap = false;
@@ -134,10 +134,12 @@ namespace FlappyNerds
             if (birdY < 0)
             {
                 birdY = 0;
+                birdYVol = 0;
             }
             else if (birdY > GraphicsDevice.Viewport.Height)
             {
                 birdY = GraphicsDevice.Viewport.Height;
+                birdYVol = 0;
             }
             Console.WriteLine(pillarX[0]);
             //Console.WriteLine("Game flow: " + birdY);
