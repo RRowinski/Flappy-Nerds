@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 Content\initial-sprite.xnb
+=======
+Content\pillar.xnb
+Content\image.xnb
+>>>>>>> Sarah's Work

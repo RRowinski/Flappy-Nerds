@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Windows.v4.0.Reach
+=======
+Windows.v4.0.HiDef
+>>>>>>> Sarah's Work
