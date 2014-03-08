@@ -42,6 +42,12 @@ namespace FlappyNerds
         {
             return (int)walkingPos.X;
         }
+        
+        //return Y coord
+        public int getY()
+        {
+            return (int)walkingPos.Y;
+        }
 
         /// <summary>
         /// Allows the game component to perform any initialization it needs to before starting
