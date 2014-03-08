@@ -15,7 +15,7 @@ public class KinectData
     // Make a global variable for the kinect sensor so that all parts of the program can use it
     public static KinectSensor kinect = null;
 
-    public static Skeleton skeletonData;
+    public static Skeleton[] skeletonData;
 
     private static float leftHandY;
     private static float rightHandY;
@@ -36,7 +36,7 @@ public class KinectData
         kinect = KinectSensor.KinectSensors.FirstOrDefault(s => s.Status == KinectStatus.Connected); // Get first Kinect Sensor
         kinect.SkeletonStream.Enable(); // Enable skeletal tracking
 
-        skeletonData = new Skeleton(); // Allocate ST data
+        skeletonData = new Skeleton[1]; // Allocate ST data
 
         kinect.SkeletonFrameReady += new EventHandler<SkeletonFrameReadyEventArgs>(Kinect_SkeletonFrameReady); // Get Ready for Skeleton Ready Events
 
