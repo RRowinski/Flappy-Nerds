@@ -102,10 +102,10 @@ namespace FlappyNerds
             spriteBatch.End();
             base.Draw(gameTime);
         }
-
-        protected override Exit()
+        /*
+        protected void Exit()
         {
             player.StopKinect();
-        }
+        }*/
     }
 }
