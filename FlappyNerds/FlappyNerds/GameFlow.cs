@@ -133,7 +133,7 @@ namespace FlappyNerds
                 canFlap = false;
             }
 
-            if (IsPlayerFound)
+            if (IsPlayerFound())
             {
                 birdY += birdYVol;
                 birdYVol += gravity;
