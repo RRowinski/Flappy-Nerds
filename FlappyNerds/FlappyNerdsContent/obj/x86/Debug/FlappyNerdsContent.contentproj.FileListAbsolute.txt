@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerdsContent\obj\x86\Debug\FlappyNerdsContent.contentprojResolveAssemblyReference.cache
-=======
-C:\Users\Sarah\Hackathon\Flappy-Nerds\FlappyNerds\FlappyNerdsContent\obj\x86\Debug\FlappyNerdsContent.contentprojResolveAssemblyReference.cache
->>>>>>> Sarah's Work

@@ -42,20 +42,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="initial-sprite.png">
       <Name>initial-sprite</Name>
-=======
-    <Compile Include="pillar.jpg">
-      <Name>pillar</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="image.jpg">
-      <Name>image</Name>
->>>>>>> Sarah's Work
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
