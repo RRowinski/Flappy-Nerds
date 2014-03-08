@@ -21,10 +21,10 @@ namespace FlappyNerds
         SpriteBatch spriteBatch;
         Texture2D bird;
         KinectData player;
+        float birdY;
         const float birdX = 30;
         const float flapVol = 10;
         const float gravity = 5;
-        float birdY;
 
         //the background texture
         Texture2D background;
@@ -96,9 +96,14 @@ namespace FlappyNerds
                 this.Exit();
 
             // TODO: Add your update logic here
-            if (birdY + player.GetLeftHandY() * 10 < GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height && birdY + player.GetLeftHandY() * 10 >= 0)
+            
+            if(birdY < 0)
             {
-                birdY += player.GetLeftHandY() * 10;
+                birdY = 0;
+            }
+            else if(birdY > GraphicDevice.PreferredBackBufferHeight)
+            {
+                birdY = GraphicDevice.PreferredBackBufferHeight;
             }
 
             Console.WriteLine("Game flow: " + birdY);
@@ -126,7 +131,6 @@ namespace FlappyNerds
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
 
             spriteBatch.Begin();
             spriteBatch.Draw(background, GraphicsDevice.Viewport.Bounds, Color.White);
