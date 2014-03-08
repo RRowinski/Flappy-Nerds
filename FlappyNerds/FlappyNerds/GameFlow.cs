@@ -113,6 +113,8 @@ namespace FlappyNerds
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            if (player.IsPlayerFound())
+            {
             pillarX[0] += (velocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
             pillarX[1] += (velocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
             pillarX[2] += (velocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
@@ -132,12 +134,9 @@ namespace FlappyNerds
                 birdYVol = flapVol;
                 canFlap = false;
             }
-
-            if (IsPlayerFound())
-            {
-                birdY += birdYVol;
-                birdYVol += gravity;
-            }
+            
+            birdY += birdYVol;
+            birdYVol += gravity;
 
             if (birdY < 0)
             {
@@ -161,8 +160,7 @@ namespace FlappyNerds
                 Console.WriteLine("COLLISION!!");
             }
 
-            if (player.IsPlayerFound())
-            {
+            
                 if (((int)gameTime.TotalGameTime.TotalSeconds % 5 == 4) && (released == false))
                 {
                     GamePillar newGP = new GamePillar(this);
