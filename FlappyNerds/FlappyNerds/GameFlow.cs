@@ -80,11 +80,6 @@ namespace FlappyNerds
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-<<<<<<< HEAD
-=======
-            player.UpdateSkeleton();
-
->>>>>>> FETCH_HEAD
             // TODO: Add your update logic here
 
             base.Update(gameTime);
