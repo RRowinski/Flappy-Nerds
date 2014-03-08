@@ -17,10 +17,10 @@ public class KinectData
 
     public static Skeleton skeletonData;
 
-    private float leftHandY;
-    private float rightHandY;
-    private float headY;
-    private float hipCentreY;
+    private static float leftHandY;
+    private static float rightHandY;
+    private static float headY;
+    private static float hipCentreY;
 
     public KinectData()
     {
