@@ -97,7 +97,7 @@ namespace FlappyNerds
 
             Services.AddService(typeof(SpriteBatch), spriteBatch);
 
-            font = Content.Load<SpriteFont>("Game");
+            font = Content.Load<SpriteFont>("Courier New");
         }
 
         /// <summary>
