@@ -50,7 +50,7 @@ namespace FlappyNerds
         public override void Initialize()
         {
             // TODO: Add your initialization code here
-            velocity = new Vector2(-30, 0);
+            velocity = new Vector2(-60, 0);
 
             base.Initialize();
         }
@@ -59,8 +59,8 @@ namespace FlappyNerds
         {
             thisHeight = rnd.Next(10, GraphicsDevice.Viewport.Height - (gap+10));
 
-            pillar = Game.Content.Load<Texture2D>("pillar");
-            pillarDown = Game.Content.Load<Texture2D>("pillar");
+            pillar = Game.Content.Load<Texture2D>("PipeUp");
+            pillarDown = Game.Content.Load<Texture2D>("PipeDown");
 
             //The position of the pillar
             walkingPos = Vector2.Zero;
@@ -102,7 +102,7 @@ namespace FlappyNerds
             spriteBatch.Begin();
             spriteBatch.Draw(pillar, walkingPos, new Rectangle(0, 0, 35, thisHeight), Color.White); // draw the pillar
                             //texture, position, color tint
-            spriteBatch.Draw(pillar, walkingPos2, new Rectangle(0, 0, 35, GraphicsDevice.Viewport.Height - thisHeight - gap), Color.Black);
+            spriteBatch.Draw(pillar, walkingPos2, new Rectangle(0, 0, 35, GraphicsDevice.Viewport.Height - thisHeight - gap), Color.White);
             spriteBatch.End();
 
             base.Draw(gameTime);
