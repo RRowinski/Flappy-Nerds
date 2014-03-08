@@ -33,14 +33,15 @@ namespace FlappyNerds
         Texture2D background;
 
         //the pillar X
-        int[] pillarX = new int[3];
+        double[] pillarX = new double[3];
         
         //stuff
         int gap = 150;
         int score;
+        int velocity = -60;
 
         //the pillar Y
-        int[] pillarY = new int[3];
+        double[] pillarY = new double[3];
 
         bool released;
 
@@ -112,6 +113,10 @@ namespace FlappyNerds
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            pillarX[0] += (velocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
+            pillarX[1] += (velocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
+            pillarX[2] += (velocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
+            
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
