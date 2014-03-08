@@ -66,7 +66,7 @@ namespace FlappyNerds
             player.StartKinect();
             // TODO: Add your initialization logic here
             GamePillar newGP = new GamePillar(this);
-            Components.Add(newGP);
+            //Components.Add(newGP);
             birdYVol = 0;
             
             pillarX[0] = GraphicsDevice.Viewport.Width;
