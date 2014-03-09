@@ -30,11 +30,10 @@ namespace FlappyNerds
         int thisHeight;
         Random rnd = new Random();
         int gap = 150;
+        int topPillarLength;
 
-        public GamePillar(Game game)
-            : base(game)
+        public GamePillar(Game game) : base(game)
         {
-            // TODO: Construct any child components here
         }
 
         //return x coord
@@ -55,7 +54,6 @@ namespace FlappyNerds
         /// </summary>
         public override void Initialize()
         {
-            // TODO: Add your initialization code here
             velocity = new Vector2(-60, 0);
 
             base.Initialize();
@@ -65,8 +63,8 @@ namespace FlappyNerds
         {
             thisHeight = rnd.Next(10, GraphicsDevice.Viewport.Height - (gap+10));
 
-            pillar = Game.Content.Load<Texture2D>("PipeUp");
-            pillarDown = Game.Content.Load<Texture2D>("PipeDown");
+            pillar = Game.Content.Load<Texture2D>("TopPillar");
+            pillarDown = Game.Content.Load<Texture2D>("BottomPillar");
 
             //The position of the pillar
             walkingPos = Vector2.Zero;
@@ -76,9 +74,7 @@ namespace FlappyNerds
             walkingPos2 = Vector2.Zero;
             walkingPos2.X = GraphicsDevice.Viewport.Width;
             walkingPos2.Y = 0;
-            //((GraphicsDevice.Viewport.Width), (GraphicsDevice.Viewport.Height - pillar.Height));
-
-            // TODO: use this.Content to load your game content here
+            topPillarLength = GraphicsDevice.Viewport.Height - thisHeight - gap;
         }
 
         /// <summary>
@@ -87,30 +83,20 @@ namespace FlappyNerds
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            // TODO: Add your update code here
             walkingPos += (velocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
             walkingPos2 += (velocity * (float)gameTime.ElapsedGameTime.TotalSeconds);
-            //if (walkingPos.X + pillar.Width < 0)
-            //{
-            //    walkingPos.X = GraphicsDevice.Viewport.Width;
-            //    walkingPos.Y = GraphicsDevice.Viewport.Height - pillar.Height;
-            //}
 
             base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            //GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
             SpriteBatch spriteBatch = Game.Services.GetService(typeof(SpriteBatch)) as SpriteBatch;
             spriteBatch.Begin();
-            spriteBatch.Draw(pillar, walkingPos, new Rectangle(0, 0, 35, thisHeight), Color.White); // draw the pillar
+            spriteBatch.Draw(pillarDown, walkingPos, new Rectangle(5, 0, 35, thisHeight), Color.White); // draw the pillar
                             //texture, position, color tint
-            spriteBatch.Draw(pillar, walkingPos2, new Rectangle(0, 0, 35, GraphicsDevice.Viewport.Height - thisHeight - gap), Color.White);
+            spriteBatch.Draw(pillar, walkingPos2, new Rectangle(5, pillar.Height - 1 - topPillarLength, 35, topPillarLength), Color.White);
             spriteBatch.End();
-
             base.Draw(gameTime);
         }
     }

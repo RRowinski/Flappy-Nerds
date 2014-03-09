@@ -1,6 +1,6 @@
-Content\initial-sprite.xnb
-Content\background2.xnb
-Content\PipeDown.xnb
-Content\PipeUp.xnb
 Content\background.xnb
 Content\cuteBird.xnb
+Content\Bird.xnb
+Content\BottomPillar.xnb
+Content\TopPillar.xnb
+Content\GameFont.xnb

@@ -2,49 +2,13 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>initial-sprite.png</Source>
-      <Name>initial-sprite</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\initial-sprite.xnb</Output>
-      <Time>2014-03-08T17:00:23.6483083+00:00</Time>
-    </Item>
-    <Item>
-      <Source>background2.png</Source>
-      <Name>background2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\background2.xnb</Output>
-      <Time>2014-03-08T17:00:23.6473082+00:00</Time>
-    </Item>
-    <Item>
-      <Source>PipeDown.jpg</Source>
-      <Name>PipeDown</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\PipeDown.xnb</Output>
-      <Time>2014-03-08T17:00:23.6363076+00:00</Time>
-    </Item>
-    <Item>
-      <Source>PipeUp.jpg</Source>
-      <Name>PipeUp</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\PipeUp.xnb</Output>
-      <Time>2014-03-08T17:00:23.6373077+00:00</Time>
-    </Item>
-    <Item>
       <Source>background.jpg</Source>
       <Name>background</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\background.xnb</Output>
-      <Time>2014-03-08T17:00:23.6403078+00:00</Time>
+      <Time>2014-03-09T14:54:40.8960181+00:00</Time>
     </Item>
     <Item>
       <Source>cuteBird.png</Source>
@@ -53,7 +17,43 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\cuteBird.xnb</Output>
-      <Time>2014-03-08T17:12:48.9019344+00:00</Time>
+      <Time>2014-03-09T14:54:40.9010184+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Bird.png</Source>
+      <Name>Bird</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\Bird.xnb</Output>
+      <Time>2014-03-08T17:00:23.6483083+00:00</Time>
+    </Item>
+    <Item>
+      <Source>BottomPillar.jpg</Source>
+      <Name>BottomPillar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\BottomPillar.xnb</Output>
+      <Time>2014-03-08T17:00:23.6363076+00:00</Time>
+    </Item>
+    <Item>
+      <Source>TopPillar.jpg</Source>
+      <Name>TopPillar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\TopPillar.xnb</Output>
+      <Time>2014-03-08T17:00:23.6373077+00:00</Time>
+    </Item>
+    <Item>
+      <Source>GameFont.spritefont</Source>
+      <Name>GameFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Ryszard\Documents\GitHub\Flappy-Nerds\FlappyNerds\FlappyNerds\bin\x86\Debug\Content\GameFont.xnb</Output>
+      <Time>2014-03-09T13:22:40.9432948+00:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

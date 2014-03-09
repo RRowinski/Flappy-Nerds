@@ -56,8 +56,6 @@ public class KinectData
 
     public void Kinect_AllFramesReady(object sender, AllFramesReadyEventArgs e)
     {
-        #region //Get a skeleton
-
         Skeleton first = GetFirstSkeleton(e);
 
         if (first != null)
@@ -67,13 +65,9 @@ public class KinectData
             headY = first.Joints[JointType.Head].Position.Y;
             hipCentreY = first.Joints[JointType.HipCenter].Position.Y;
             playerFound = true;
-            Console.WriteLine(leftHandY);
         }
         else
-        {
             playerFound = false;
-        }
-        #endregion
     }
 
     private Skeleton GetFirstSkeleton(AllFramesReadyEventArgs e)
@@ -93,24 +87,7 @@ public class KinectData
             return first;
         }
     }
-
-    /*
-    public void Kinect_AllFramesReady(object sender, AllFramesReadyEventArgs e)
-    {
-        using (SkeletonFrame skeletonFrame = e.OpenSkeletonFrame()) // Open the Skeleton frame
-        {
-            if (skeletonFrame != null && skeletonData != null) // check that a frame is available
-            {
-                skeletonFrame.CopySkeletonDataTo(skeletonData); // get the skeletal information in this frame
-                Console.WriteLine("I get here!");
-                leftHandY = skeletonData[0].Joints[JointType.HandLeft].Position.Y;
-                rightHandY = skeletonData[0].Joints[JointType.HandRight].Position.Y;
-                headY = skeletonData[0].Joints[JointType.Head].Position.Y;
-                hipCentreY = skeletonData[0].Joints[JointType.HipCenter].Position.Y;
-            }
-        }
-    }*/
-
+    
     public float GetLeftHandY()
     {
         return leftHandY;

@@ -68,7 +68,6 @@ namespace FlappyNerds
             player.StartKinect();
             // TODO: Add your initialization logic here
             GamePillar newGP = new GamePillar(this);
-            //Components.Add(newGP);
             birdYVol = 0;
             
             pillarX[0] = GraphicsDevice.Viewport.Width;
@@ -91,13 +90,12 @@ namespace FlappyNerds
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            bird = Content.Load<Texture2D>("initial-sprite");
-            background = Content.Load<Texture2D>("background");
+            bird = Content.Load<Texture2D>("cuteBird");
+            background = Content.Load<Texture2D>("Background");
             released = false;
 
             Services.AddService(typeof(SpriteBatch), spriteBatch);
-
-            font = Content.Load<SpriteFont>("Courier New");
+            font =  Content.Load<SpriteFont>("GameFont");
         }
 
         /// <summary>
@@ -128,9 +126,7 @@ namespace FlappyNerds
 
             // TODO: Add your update logic here
             if (!canFlap && player.GetLeftHandY() > player.GetHeadY() && player.GetRightHandY() > player.GetHeadY())
-            {
                 canFlap = true;
-            }
 
             if (canFlap && player.GetLeftHandY() < player.GetHipY() && player.GetRightHandY() < player.GetHipY())
             {
@@ -151,8 +147,6 @@ namespace FlappyNerds
                 birdY = GraphicsDevice.Viewport.Height;
                 birdYVol = 0;
             }
-            Console.WriteLine(pillarX[0]);
-            //Console.WriteLine("Game flow: " + birdY);
             
             if ((birdX > pillarX[0]))
                 score++;
@@ -160,8 +154,8 @@ namespace FlappyNerds
             if ((birdX > pillarX[0]) && (birdX < pillarX[0] + 35) && ((birdY > pillarY[0]) || (birdY < pillarY[0] - gap)))
             {
                 //collision
-                Console.WriteLine("COLLISION!!");
                 running = false;
+                GraphicsDevice.Clear(Color.CornflowerBlue);
             }
 
             
@@ -176,11 +170,9 @@ namespace FlappyNerds
 
                     released = true;
                 }
+
                 if ((int)gameTime.TotalGameTime.TotalSeconds % 5 == 0)
-                {
-                    //Components.Add(new GamePillar(this));
                     released = false;
-                }
             }
 
             base.Update(gameTime);
@@ -202,24 +194,21 @@ namespace FlappyNerds
             spriteBatch.Draw(bird, new Vector2(birdX, birdY),
                             null, Color.White, 0.3f,
                             new Vector2(bird.Width / 2, bird.Height / 2),
-                            0.1f, SpriteEffects.None, 1.0f);
+                            0.5f, SpriteEffects.None, 1.0f);
             spriteBatch.End();
 
             spriteBatch.Begin();
-            spriteBatch.DrawString(font, "Score: " + score, Vector2.zero, Color.White);
+            spriteBatch.DrawString(font, "Score: " + score, Vector2.Zero, Color.White);
             spriteBatch.End();
+
+            if (!running)
+            {
+                spriteBatch.Begin();
+                spriteBatch.DrawString(font, "Game over!", new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2), Color.White);
+                spriteBatch.End();
+            }
 
             base.Draw(gameTime);
         }
-
-        private bool Flap()
-        {
-            return true;
-        }
-        /*
-        protected void Exit()
-        {
-            player.StopKinect();
-        }*/
     }
 }
